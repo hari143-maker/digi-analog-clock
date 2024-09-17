@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:black;
+    background-size:cover;
+}
+.clock-container {
+    display: flex;
+    justify-content:space-around;
+    flex-direction:row;
+    align-items: center;
+}
+
+.analog-clock {
+    position: relative;
+    justify-content: space-around;
+    width: 300px;
+    height: 300px;
+    border: 10px solid #e6097b;
+    border-radius: 50%;
+    background:url(../styles/RK.jpg);
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.analog-clock .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour-hand {
+    width: 4px;
+    height: 70px;
+    background: #e10707;
+    transform: rotate(90deg);
+}
+
+.min-hand {
+    width: 3px;
+    height: 90px;
+    background: #eafa02;
+    transform: rotate(180deg);
+}
+
+.sec-hand {
+    width: 2px;
+    height: 100px;
+    background: rgb(218, 71, 13);
+    transform: rotate(270deg);
+}
+
+.center-circle {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #c203ed;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.digital-clock {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e4071dfc;
+}
+.digital-clock:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .clock-container {
+        justify-content: space-around;
+        flex-direction:column;
+        align-items: center;
+
+    }
+    .analog-clock {
+        width: 200px;
+        height: 200px;
+    }
+    .digital-clock {
+        font-size: 1cm;
+    }
+}
